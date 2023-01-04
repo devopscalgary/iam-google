@@ -178,3 +178,13 @@ module "subnet-iam-bindings" {
   conditional_bindings = each.value.conditional_bindings
 }
 
+provider "google" {
+  project = "My First Project"
+  region = "us-central1"
+  zone = "us-central1-b"
+}
+
+resource "google_storage_bucket" "bucket" {
+  name          = "gcp-support"
+  location      = "ASIA-SOUTH1"
+}
