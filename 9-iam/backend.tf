@@ -5,7 +5,7 @@
 
 terraform {
   backend "gcs" {
-    bucket  = "gc-somadri"
+    bucket  = "somaterraform"
     prefix  = "terraform/state"
   }
 }

@@ -59,37 +59,37 @@ variable "folder_iam" {
 }
 
 
-# variable "organization_iam_bindings" {
-#   type = map(object({
-#     organizations = list(string)
-#     bindings      = map(list(string))
-#     conditional_bindings = list(object({
-#       role        = string
-#       title       = string
-#       description = string
-#       expression  = string
-#       members     = list(string)
-#     }))
+variable "organization_iam_bindings" {
+  type = map(object({
+    organizations = list(string)
+    bindings      = map(list(string))
+    conditional_bindings = list(object({
+      role        = string
+      title       = string
+      description = string
+      expression  = string
+      members     = list(string)
+    }))
 
-#   }))
-#   default = {}
-# }
+  }))
+  default = {}
+}
 
-# variable "secret_manager_iam" {
-#   type = map(object({
-#     project  = string
-#     secrets  = list(string)
-#     bindings = map(list(string))
-#     conditional_bindings = list(object({
-#       role        = string
-#       title       = string
-#       description = string
-#       expression  = string
-#       members     = list(string)
-#     }))
-#   }))
-#   default = {}
-# }
+variable "secret_manager_iam" {
+  type = map(object({
+    project  = string
+    secrets  = list(string)
+    bindings = map(list(string))
+    conditional_bindings = list(object({
+      role        = string
+      title       = string
+      description = string
+      expression  = string
+      members     = list(string)
+    }))
+  }))
+  default = {}
+}
 
 
 variable "project_service_account" {
@@ -146,10 +146,10 @@ variable "subnet_iam" {
 #   default = {}
 # }
 
-# variable "org_id" {
-#   description = "GCP Organization ID"
-#   type        = string
-# }
+variable "org_id" {
+  description = "GCP Organization ID"
+  type        = string
+}
 
 variable "groups" {
   type    = map(any)
